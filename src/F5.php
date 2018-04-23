@@ -176,7 +176,7 @@ class F5 implements ServiceInterface
 	 */
 	public function getNamespaces()
 	{
-		$curl = new Utilities\Curl($this->_url, $this->_curlOpts);
+		$curl = new Curl($this->_url, $this->_curlOpts);
 
 		$ul = [];
 		preg_match('#<ul>(.*)<ul>#si', $curl->exec(), $ul);
@@ -195,7 +195,7 @@ class F5 implements ServiceInterface
 	 */
 	public function getWsdl($ns)
 	{
-		$curl = new Utilities\Curl(
+		$curl = new Curl(
 			$this->_url . '?WSDL=' . $ns,
 			$this->_curlOpts
 		);
